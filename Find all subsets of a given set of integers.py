@@ -1,6 +1,6 @@
 """We are given a set of integers and we have to find all the possible subsets of this set of integers."""
 
-"""BACKTRACKING"""
+
 
 """Using Backtracking"""
 def find_subsets(nums):

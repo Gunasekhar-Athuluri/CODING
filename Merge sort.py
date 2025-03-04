@@ -1,37 +1,28 @@
-def mergeSort(array):
-    if len(array) > 1:
-        # r is the point where the array is divided into two subarrays
-        r = len(array) // 2
-        L = array[:r]
-        M = array[r:]
+def merge_sort(arr):
+    n = len(arr)
+    if n > 1:
+        mid = n // 2
+        l_arr = arr[:mid]
+        r_arr = arr[mid:]
 
-        # Sort the two halves
-        mergeSort(L)
-        mergeSort(M)
+        merge_sort(l_arr)
+        merge_sort(r_arr)
 
         i = j = k = 0
 
-        # Merge the two halves
-        while i < len(L) or j < len(M):
-            if i < len(L) and (j >= len(M) or L[i] < M[j]):
-                array[k] = L[i]
+        while i < len(l_arr) or j < len(r_arr):
+            if (i < len(l_arr)) and (j >= len(r_arr) or l_arr[i] < r_arr[j]):
+                arr[k] = l_arr[i]
                 i += 1
+                k += 1
             else:
-                array[k] = M[j]
+                arr[k] = r_arr[j]
                 j += 1
-            k += 1
-
-
-def print_list(arr):
-    for i in range(len(arr)):
-        print(arr[i], end=" ")
-    print()
+                k += 1
 
 
 if __name__ == '__main__':
-    array = [6, 5, 12, 10, 45, 0, 4, 9, 1]
+    array = [6, -5, -12, 10, 45, 0, -4, 9, 1]
 
-    mergeSort(array)
-
-    print("Sorted array is: ")
-    print_list(array)
+    merge_sort(array)
+    print(str(array))

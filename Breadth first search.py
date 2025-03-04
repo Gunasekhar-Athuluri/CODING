@@ -28,3 +28,9 @@ graph = {
 # Calling BFS starting from node 'A'
 print("\nBFS Traversal:")
 bfs(graph, 'A')
+
+
+"""
+BFS Traversal:
+A B C D E F 
+"""

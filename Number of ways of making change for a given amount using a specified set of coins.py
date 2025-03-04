@@ -1,5 +1,7 @@
 """Suppose we have coin denominations of [1, 2, 5] and the total amount is 7"""
 
+"""DYNAMIC PROGRAMMING"""
+
 def coin_change_ways(denominations, amount):
     # Initialize dp array with 0's, dp[i] will store the number of ways to make change for amount i
     dp = [0] * (amount + 1)

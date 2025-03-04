@@ -2,6 +2,7 @@
 
 """BACKTRACKING"""
 
+"""Using Backtracking"""
 def find_subsets(nums):
     result = []
     
@@ -26,3 +27,26 @@ def find_subsets(nums):
 nums = [1, 2, 3]
 subsets = find_subsets(nums)
 print(subsets)
+
+
+"""Using Bit Manipulation"""
+def find_subsets_bit_manipulation(nums):
+    result = []
+    n = len(nums)
+    
+    # Total number of subsets is 2^n
+    for i in range(2 ** n):
+        subset = []
+        for j in range(n):
+            # If the j-th bit is set in i, include nums[j] in the subset
+            if (i & (1 << j)) > 0:
+                subset.append(nums[j])
+        result.append(subset)
+    
+    return result
+
+# Example usage
+nums = [1, 2, 3]
+subsets = find_subsets_bit_manipulation(nums)
+print(subsets)
+

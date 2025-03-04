@@ -1,10 +1,6 @@
-# MergeSort in Python
-
-
 def mergeSort(array):
     if len(array) > 1:
-
-        #  r is the point where the array is divided into two subarrays
+        # r is the point where the array is divided into two subarrays
         r = len(array) // 2
         L = array[:r]
         M = array[r:]
@@ -15,29 +11,15 @@ def mergeSort(array):
 
         i = j = k = 0
 
-        def pick_left():
-            nonlocal k, i
-            array[k] = L[i]
-            i += 1
-            k += 1
-
-        def pick_right():
-            nonlocal k, j
-            array[k] = M[j]
-            j += 1
-            k += 1
-
-        while i < len(L) and j < len(M):
-            if L[i] < M[j]:
-                pick_left()
+        # Merge the two halves
+        while i < len(L) or j < len(M):
+            if i < len(L) and (j >= len(M) or L[i] < M[j]):
+                array[k] = L[i]
+                i += 1
             else:
-                pick_right()
-
-        while i < len(L):
-            pick_left()
-
-        while j < len(M):
-            pick_right()
+                array[k] = M[j]
+                j += 1
+            k += 1
 
 
 def print_list(arr):

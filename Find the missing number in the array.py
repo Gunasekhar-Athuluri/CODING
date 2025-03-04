@@ -19,3 +19,10 @@ def find_missing_number(nums):
 nums = [1, 2, 4, 5, 6]  # 3 is missing
 missing_number = find_missing_number(nums)
 print(f"The missing number is: {missing_number}")
+
+
+"""Runtime complexity: Linear, 
+O(n)
+
+Memory complexity: Constant, 
+O(1)"""

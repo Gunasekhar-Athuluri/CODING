@@ -22,3 +22,9 @@ graph = {
 # Calling DFS starting from node 'A'
 print("DFS Traversal:")
 dfs(graph, 'A')
+
+"""
+DFS Traversal:
+A B D E F C 
+"""
+

@@ -14,11 +14,10 @@ def merge_sort(arr):
             if (i < len(l_arr)) and (j >= len(r_arr) or l_arr[i] < r_arr[j]):
                 arr[k] = l_arr[i]
                 i += 1
-                k += 1
             else:
                 arr[k] = r_arr[j]
                 j += 1
-                k += 1
+            k += 1
 
 
 if __name__ == '__main__':

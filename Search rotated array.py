@@ -1,5 +1,10 @@
 """Search for a given number in a sorted array, with unique elements, that has been rotated by some arbitrary number. Return -1 if the number does not exist. Assume that the array does not contain duplicates."""
 
+"""
+arr1 = [15, 18, 2, 3, 6, 12]
+target1 = 3
+"""
+
 def search_rotated_array(arr, target):
     left, right = 0, len(arr) - 1
 
